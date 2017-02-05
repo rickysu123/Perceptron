@@ -3,7 +3,7 @@ rsu4@u.rochester.edu
 CSC446
 Homework 2
 
-Implement perceptron for the adult income dataset using Python. Data available in /u/cs246/data/adult. Experiment with performance as a function of learning rate.
+Implement perceptron for the adult income dataset using Python. Experiment with performance as a function of learning rate.
 
 ************ Files *********
 parse.py => parses the data files to create vectors of 0’s and 1’s. Since the longest vector in the datasets is 123, I make vectors of length 123 for each line in the data file given as the parameter. This is used to parse the train, dev, and test datasets. Each line will be transformed into something that looks like: [0, 0, 1, …, 0, 1, 0, 0], with a length of 123. The true class of each vector is converted. Classes of -1 are encoded as 0, and classes of +1 are encoded as 1. This number is added to the beginning of the vector, to make all vectors a length of 124. This is because we can easily remove it when multiplying by the weight vectors, since x_0 is 1 anyways, and w_0 (the bias) can be removed to change.
