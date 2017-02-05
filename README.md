@@ -4,7 +4,7 @@ Implementation of Perceptron Algorithm Using Stochastic Gradient Descent
 Ricky Su
 rsu4@u.rochester.edu
 
-************ Files *********
+************ Files ********* \n
 parse.py => parses the data files to create vectors of 0’s and 1’s. Since the longest vector in the datasets is 123, I make vectors of length 123 for each line in the data file given as the parameter. This is used to parse the train, dev, and test datasets. Each line will be transformed into something that looks like: [0, 0, 1, …, 0, 1, 0, 0], with a length of 123. The true class of each vector is converted. Classes of -1 are encoded as 0, and classes of +1 are encoded as 1. This number is added to the beginning of the vector, to make all vectors a length of 124. This is because we can easily remove it when multiplying by the weight vectors, since x_0 is 1 anyways, and w_0 (the bias) can be removed to change.
 
 Perceptron.py => file that contains the algorithm. There are five functions here: train_weights(), get_sign(), perceptron(), get_plot() and main(). The function train_weights() is basically the algorithm. The perceptron() function calls train_weights() and finds the accuracy based on the testing file that is given. I use the dev set here to clean up the training set. Function get_sign() returns 0 or 1 based on the estimated class. main() puts it all together. I kept the best accuracy that I found on the dev set as the default, which was 6 training loops with a learning rate of 0.31. The get_plot() function was for me to test accuracies based on different training loops and learning rates. As this function will take a long time to run, I kept the accuracies, which is in the file accuracies.csv.
